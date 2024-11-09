@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScrollViewPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="taa-JL-LFR" userLabel="today AD">
+                                <rect key="frame" x="0.0" y="141.00000000000003" width="375" height="271.66666666666674"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 추천상품" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKp-yR-Vml">
+                                        <rect key="frame" x="12" y="7.9999999999999982" width="107" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zn1-Af-t7X" userLabel="AD mark">
+                                        <rect key="frame" x="327.66666666666669" y="1.6666666666666572" width="35.333333333333314" height="33"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tnb-Kg-c1A">
+                                                <rect key="frame" x="7.9999999999999982" y="8" width="19.333333333333329" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                        <constraints>
+                                            <constraint firstItem="Tnb-Kg-c1A" firstAttribute="top" secondItem="Zn1-Af-t7X" secondAttribute="top" constant="8" id="Fdj-1Q-HSr"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tnb-Kg-c1A" secondAttribute="trailing" constant="8" id="c0r-Uu-cWY"/>
+                                            <constraint firstAttribute="bottom" secondItem="Tnb-Kg-c1A" secondAttribute="bottom" constant="8" id="cWk-O7-3du"/>
+                                            <constraint firstItem="Tnb-Kg-c1A" firstAttribute="leading" secondItem="Zn1-Af-t7X" secondAttribute="leading" constant="8" id="pKT-Vz-Xhe"/>
+                                        </constraints>
+                                    </view>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsa-tR-zof" userLabel="recommended items">
+                                        <rect key="frame" x="0.0" y="40.333333333333329" width="375" height="231.33333333333337"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="e2p-4Y-pVY" userLabel="recommended item HStack">
+                                                <rect key="frame" x="0.0" y="0.0" width="820" height="231.33333333333334"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WC1-tu-Wiq" userLabel="recommended item">
+                                                        <rect key="frame" x="20" y="10" width="120" height="211.33333333333334"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kio-Ko-Q6d" userLabel="item image">
+                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="120" id="By3-RC-deh"/>
+                                                                    <constraint firstAttribute="height" constant="120" id="nwN-FN-OaF"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라튤립" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6b-UB-bnX">
+                                                                <rect key="frame" x="0.0" y="127.99999999999996" width="31.333333333333332" height="14.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아연 스트라이프 순면 양면 차렵이불 SS/Q/K 4colors" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKp-Tx-iXx">
+                                                                <rect key="frame" x="0.0" y="150.33333333333334" width="120" height="33.666666666666657"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30% 85,500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQ9-df-DfX">
+                                                                <rect key="frame" x="0.0" y="191.99999999999997" width="98" height="19.333333333333343"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="kio-Ko-Q6d" secondAttribute="trailing" id="Jks-Tw-96B"/>
+                                                            <constraint firstItem="kio-Ko-Q6d" firstAttribute="leading" secondItem="WC1-tu-Wiq" secondAttribute="leading" id="hrd-PK-ZkI"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gem-9S-R0D" userLabel="recommended item">
+                                                        <rect key="frame" x="152" y="10" width="120" height="211.33333333333334"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AxK-A2-Poo" userLabel="item image">
+                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="120" id="JQA-CA-hIe"/>
+                                                                    <constraint firstAttribute="width" constant="120" id="MqB-yg-Pqs"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라튤립" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0P-db-akf">
+                                                                <rect key="frame" x="0.0" y="127.99999999999996" width="31.333333333333332" height="14.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아연 스트라이프 순면 양면 차렵이불 SS/Q/K 4colors" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgf-6J-UBm">
+                                                                <rect key="frame" x="0.0" y="150.33333333333334" width="120" height="33.666666666666657"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30% 85,500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seg-6E-8AV">
+                                                                <rect key="frame" x="0.0" y="191.99999999999997" width="98" height="19.333333333333343"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="AxK-A2-Poo" firstAttribute="leading" secondItem="gem-9S-R0D" secondAttribute="leading" id="kUR-16-T4Y"/>
+                                                            <constraint firstAttribute="trailing" secondItem="AxK-A2-Poo" secondAttribute="trailing" id="yO8-M4-MiY"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hmF-cA-6Mu" userLabel="recommended item">
+                                                        <rect key="frame" x="284" y="10" width="120" height="211.33333333333334"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ls-b2-FKC" userLabel="item image">
+                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="120" id="O2D-IV-CQO"/>
+                                                                    <constraint firstAttribute="height" constant="120" id="kuX-7b-ybL"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라튤립" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mH6-bh-zvU">
+                                                                <rect key="frame" x="0.0" y="127.99999999999996" width="31.333333333333332" height="14.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아연 스트라이프 순면 양면 차렵이불 SS/Q/K 4colors" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDn-lX-MYU">
+                                                                <rect key="frame" x="0.0" y="150.33333333333334" width="120" height="33.666666666666657"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30% 85,500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoX-xi-0d0">
+                                                                <rect key="frame" x="0.0" y="191.99999999999997" width="98" height="19.333333333333343"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="4Ls-b2-FKC" secondAttribute="trailing" id="EUN-0s-0x7"/>
+                                                            <constraint firstItem="4Ls-b2-FKC" firstAttribute="leading" secondItem="hmF-cA-6Mu" secondAttribute="leading" id="TQi-So-cu3"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hfa-4j-YaA" userLabel="recommended item">
+                                                        <rect key="frame" x="416" y="10" width="120" height="211.33333333333334"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2R-Sl-8fY" userLabel="item image">
+                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="120" id="PM2-Fl-0Ox"/>
+                                                                    <constraint firstAttribute="height" constant="120" id="q2X-JI-cta"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라튤립" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fM-ed-PTm">
+                                                                <rect key="frame" x="0.0" y="127.99999999999996" width="31.333333333333332" height="14.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아연 스트라이프 순면 양면 차렵이불 SS/Q/K 4colors" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69S-gF-gRj">
+                                                                <rect key="frame" x="0.0" y="150.33333333333334" width="120" height="33.666666666666657"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30% 85,500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k23-SR-ZtK">
+                                                                <rect key="frame" x="0.0" y="191.99999999999997" width="98" height="19.333333333333343"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="E2R-Sl-8fY" secondAttribute="trailing" id="RLz-xJ-uox"/>
+                                                            <constraint firstItem="E2R-Sl-8fY" firstAttribute="leading" secondItem="hfa-4j-YaA" secondAttribute="leading" id="lMA-hA-bV2"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="58i-rt-78h" userLabel="recommended item">
+                                                        <rect key="frame" x="548" y="10" width="120" height="211.33333333333334"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfy-lx-5mI" userLabel="item image">
+                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="120" id="CI2-xj-14w"/>
+                                                                    <constraint firstAttribute="height" constant="120" id="vCm-l3-7Xb"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라튤립" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOl-RD-zdI">
+                                                                <rect key="frame" x="0.0" y="127.99999999999996" width="31.333333333333332" height="14.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아연 스트라이프 순면 양면 차렵이불 SS/Q/K 4colors" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSO-C1-zjD">
+                                                                <rect key="frame" x="0.0" y="150.33333333333334" width="120" height="33.666666666666657"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30% 85,500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vu-Dx-OWR">
+                                                                <rect key="frame" x="0.0" y="191.99999999999997" width="98" height="19.333333333333343"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="hfy-lx-5mI" firstAttribute="leading" secondItem="58i-rt-78h" secondAttribute="leading" id="o13-l2-nkm"/>
+                                                            <constraint firstAttribute="trailing" secondItem="hfy-lx-5mI" secondAttribute="trailing" id="o8R-z5-HVM"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jCa-Ql-r5r" userLabel="recommended item">
+                                                        <rect key="frame" x="680" y="10" width="120" height="211.33333333333334"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GS8-Go-Ig6" userLabel="item image">
+                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="120" id="VFu-5I-UlD"/>
+                                                                    <constraint firstAttribute="height" constant="120" id="lRK-ho-v32"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라튤립" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gV3-Fv-aJh">
+                                                                <rect key="frame" x="0.0" y="127.99999999999996" width="31.333333333333332" height="14.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아연 스트라이프 순면 양면 차렵이불 SS/Q/K 4colors" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgr-53-tf7">
+                                                                <rect key="frame" x="0.0" y="150.33333333333334" width="120" height="33.666666666666657"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30% 85,500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GV-M6-OXC">
+                                                                <rect key="frame" x="0.0" y="191.99999999999997" width="98" height="19.333333333333343"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="GS8-Go-Ig6" secondAttribute="trailing" id="7NY-uO-42d"/>
+                                                            <constraint firstItem="GS8-Go-Ig6" firstAttribute="leading" secondItem="jCa-Ql-r5r" secondAttribute="leading" id="i5W-Wy-GMw"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <directionalEdgeInsets key="directionalLayoutMargins" top="10" leading="20" bottom="10" trailing="20"/>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="e2p-4Y-pVY" firstAttribute="leading" secondItem="9gc-Mu-Ldi" secondAttribute="leading" id="8Dt-Vt-Wms"/>
+                                            <constraint firstItem="e2p-4Y-pVY" firstAttribute="height" secondItem="q75-69-drS" secondAttribute="height" id="9xz-Ra-yXz"/>
+                                            <constraint firstItem="e2p-4Y-pVY" firstAttribute="trailing" secondItem="9gc-Mu-Ldi" secondAttribute="trailing" id="kt9-cq-M6U"/>
+                                            <constraint firstItem="e2p-4Y-pVY" firstAttribute="bottom" secondItem="9gc-Mu-Ldi" secondAttribute="bottom" id="tF9-Y7-dhQ"/>
+                                            <constraint firstItem="e2p-4Y-pVY" firstAttribute="top" secondItem="9gc-Mu-Ldi" secondAttribute="top" id="y2E-5z-DJV"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="9gc-Mu-Ldi"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="q75-69-drS"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="gsa-tR-zof" secondAttribute="bottom" id="2Zq-Ln-Z0w"/>
+                                    <constraint firstItem="uKp-yR-Vml" firstAttribute="leading" secondItem="taa-JL-LFR" secondAttribute="leading" constant="12" id="7UH-wz-pto"/>
+                                    <constraint firstItem="Zn1-Af-t7X" firstAttribute="centerY" secondItem="uKp-yR-Vml" secondAttribute="centerY" id="EuA-R0-tFQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="gsa-tR-zof" secondAttribute="trailing" id="F3S-fJ-DbY"/>
+                                    <constraint firstItem="Zn1-Af-t7X" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uKp-yR-Vml" secondAttribute="trailing" constant="100" id="K7W-c9-I8d"/>
+                                    <constraint firstItem="gsa-tR-zof" firstAttribute="leading" secondItem="taa-JL-LFR" secondAttribute="leading" id="VHF-RV-gta"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zn1-Af-t7X" secondAttribute="trailing" constant="12" id="fmX-qj-rod"/>
+                                    <constraint firstItem="gsa-tR-zof" firstAttribute="top" secondItem="uKp-yR-Vml" secondAttribute="bottom" constant="12" id="iWa-h6-R15"/>
+                                    <constraint firstItem="uKp-yR-Vml" firstAttribute="top" secondItem="taa-JL-LFR" secondAttribute="top" constant="8" id="mQL-Yz-gUR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="taa-JL-LFR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="91" id="JSX-K4-e9n"/>
+                            <constraint firstItem="taa-JL-LFR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kmF-CO-i5Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="taa-JL-LFR" secondAttribute="trailing" id="o4s-JE-D4Q"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="88.799999999999997" y="-24.384236453201972"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
