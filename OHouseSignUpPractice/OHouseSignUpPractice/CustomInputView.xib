@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomInputView" customModule="OHouseSignUpPractice" customModuleProvider="target">
+            <connections>
+                <outlet property="inputTextField" destination="qS2-bh-w3X" id="r2B-sp-0dL"/>
+                <outlet property="inputTextFieldTrailingToInputView" destination="5o2-ep-gfX" id="PCP-UX-hEG"/>
+                <outlet property="inputTextFieldTrailingToRemoveBtn" destination="Z4r-Xh-6hT" id="8y7-kT-nBM"/>
+                <outlet property="invalidInputErrorText" destination="Q7v-Xw-fZ1" id="n7B-dJ-38T"/>
+                <outlet property="removeButton" destination="r2Q-pf-Xvz" id="p4x-c0-QRU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="IVv-hD-wGI" userLabel="Input View">
+            <rect key="frame" x="0.0" y="0.0" width="405" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kur-EG-GwN" userLabel="x button">
+                    <rect key="frame" x="367" y="8" width="30" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2Q-pf-Xvz">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title=""/>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="x.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ggS-DG-3uF">
+                            <rect key="frame" x="5" y="5.6666666666666661" width="20" height="18.666666666666671"/>
+                            <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="5pw-rO-6Cd"/>
+                                <constraint firstAttribute="width" constant="20" id="gGK-pV-xbq"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="r2Q-pf-Xvz" firstAttribute="leading" secondItem="kur-EG-GwN" secondAttribute="leading" id="8oP-DS-unD"/>
+                        <constraint firstAttribute="bottom" secondItem="r2Q-pf-Xvz" secondAttribute="bottom" id="Aca-Rm-mim"/>
+                        <constraint firstItem="ggS-DG-3uF" firstAttribute="centerY" secondItem="kur-EG-GwN" secondAttribute="centerY" id="Bui-Y1-Rnf"/>
+                        <constraint firstAttribute="height" constant="30" id="TlO-2J-ZOC"/>
+                        <constraint firstAttribute="trailing" secondItem="r2Q-pf-Xvz" secondAttribute="trailing" id="hsm-J2-HHb"/>
+                        <constraint firstItem="r2Q-pf-Xvz" firstAttribute="top" secondItem="kur-EG-GwN" secondAttribute="top" id="jTs-mr-VWf"/>
+                        <constraint firstItem="ggS-DG-3uF" firstAttribute="centerX" secondItem="kur-EG-GwN" secondAttribute="centerX" id="ms7-MH-oNh"/>
+                        <constraint firstAttribute="width" constant="30" id="tpI-AC-gTF"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qS2-bh-w3X">
+                    <rect key="frame" x="12" y="8" width="381" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="aa3-WO-gYV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 형식에 맞는지 확인해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7v-Xw-fZ1">
+                    <rect key="frame" x="12" y="42" width="385" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" systemColor="systemRedColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="qS2-bh-w3X" firstAttribute="top" secondItem="IVv-hD-wGI" secondAttribute="top" constant="8" id="4dm-ak-Sfj"/>
+                <constraint firstAttribute="trailing" secondItem="qS2-bh-w3X" secondAttribute="trailing" constant="12" id="5o2-ep-gfX"/>
+                <constraint firstItem="Q7v-Xw-fZ1" firstAttribute="top" secondItem="qS2-bh-w3X" secondAttribute="bottom" constant="4" id="Akw-Kl-u5y"/>
+                <constraint firstItem="Q7v-Xw-fZ1" firstAttribute="leading" secondItem="IVv-hD-wGI" secondAttribute="leading" constant="12" id="EUb-ah-djU"/>
+                <constraint firstItem="kur-EG-GwN" firstAttribute="leading" secondItem="qS2-bh-w3X" secondAttribute="trailing" priority="999" constant="4" id="Z4r-Xh-6hT"/>
+                <constraint firstAttribute="trailing" secondItem="Q7v-Xw-fZ1" secondAttribute="trailing" constant="8" id="bFn-F9-Mcc"/>
+                <constraint firstItem="kur-EG-GwN" firstAttribute="top" secondItem="IVv-hD-wGI" secondAttribute="top" constant="8" id="dnO-Bj-OSN"/>
+                <constraint firstAttribute="bottom" secondItem="Q7v-Xw-fZ1" secondAttribute="bottom" constant="8" id="fYU-NQ-UWT"/>
+                <constraint firstAttribute="trailing" secondItem="kur-EG-GwN" secondAttribute="trailing" constant="8" id="thS-kM-euW"/>
+                <constraint firstItem="qS2-bh-w3X" firstAttribute="leading" secondItem="IVv-hD-wGI" secondAttribute="leading" constant="12" id="vpF-4l-jnx"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isInvalidInput" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="-9.9236641221374047" y="-286.61971830985919"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="x.circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
