@@ -85,6 +85,7 @@ class CustomButton: UIView {
     }
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         self.applyNib()
         self.applyDefaultLayout()
     }
