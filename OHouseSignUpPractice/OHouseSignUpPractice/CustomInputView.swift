@@ -13,24 +13,33 @@ import UIKit
 [V] 텍스트 필드 입력값이 바뀌면
     [V] 입력 값이 있다면 -> x 버튼 보이기
     [V] validity 확인
-[ ] 포커싱 아웃 액션 시
+[V] 포커싱 아웃 액션 시
     [V] validity 체크하기
-    [ ] 가입된 유저인지 확인
+    [V] 가입된 유저인지 확인
     [V] x 버튼 나와있다면 안보이게 하기
-[ ] invalid 처리
-    [ ] invalid -> 빨간 보더 & 에러 메시지 보이게 하기
-    [ ] valid -> 회색 보더 & 에러 메시지 숨기기
-[ ] check validity
-    [V] 입력값이 없다면 -> emptyValue
-    [ ] 유효하지 않은 이메일 형식 ->
+[V] invalid 처리
+    [V] invalid -> 빨간 보더 & 에러 메시지 보이게 하기
+    [V] valid -> 회색 보더 & 에러 메시지 숨기기
 */
 
 
-/// CustomInputView에서 발생할 수 있는 입력값 에러
-enum InputErrorType: String {
+
+/// CustomInputView에 이메일이 입력된 경우, 발생할 수 있는 입력값 에러
+enum EmailInputErrorType: String {
     case emptyValue = "꼭 입력해야 해요."
-    case invalid = "유효하지 않은 값입니다."
+    case invalidEmail = "이메일 형식에 맞는지 확인해주세요."
+    case alreadyRegistered = "이미 가입한 이메일이에요."
+    case notRegistered = "가입되지 않은 이메일이에요."
 }
+
+/// CustomInputView에 비밀번호가 입력된 경우, 발생할 수 있는 입력값 에러
+enum PasswordInputErrorType: String {
+    case emptyValue = "꼭 입력해야 해요."
+    case invalidPassword = "영문, 숫자를 포함해 8자 이상으로 만들어주세요."
+    case emptyCheckerValue = "확인을 위해 비밀번호를 한번 더 입력해주세요."
+    case wrongChecker = "비밀번호가 일치하지 않아요."
+}
+
 
 enum InputViewState {
     case basic
@@ -60,17 +69,19 @@ class CustomInputView: UIView {
     @IBOutlet weak var inputTextFieldTrailingToRemoveBtn: NSLayoutConstraint!
     
     
-    /// 입력값이 유효하지 않을 경우, 에러 타입
-    var inputErrorType: InputErrorType = InputErrorType.invalid
+    /// 입력값이 유효하지 않을 경우, 에러 메시지
+    var inputErrorText: String = ""
+    
+    var delegate: CustomInputViewDelegate? = nil
     
     
     // MARK: State Properties
     
     /// 필수로 입력되어야 하는지 여부
-    private var isRequired: Bool = true
+//    private var isRequired: Bool = true
 
     /// 활성화 여부, 입력 가능한지 여부
-    @IBInspectable var isActive: Bool = true {
+    private var isActive: Bool = true {
         didSet {
             if !isActive {
                 applyStyle(for: InputViewState.inactive)
@@ -79,27 +90,31 @@ class CustomInputView: UIView {
     }
 
     /// 입력 중인지 여부
-    @IBInspectable var isEditing: Bool = false {
+    private var isEditing: Bool = false {
         didSet {
-            self.isRemoveBtnActive = isEditing ? true : false
+            self.isRemoveBtnActive = isEditing && !isRemoveBtnHidden ? true : false
+            
+            print(#fileID, #function, #line, "\(isEditing), \(isRemoveBtnActive)")
         }
     }
     
     /// 입력값이 유효한지 여부
-    @IBInspectable var isValidInput: Bool = true {
+    var isValidInput: Bool = true {
         didSet {
             if isValidInput {
                 applyStyle(for: InputViewState.basic)
                 self.setInputErrorText(text: "")
             } else {
                 applyStyle(for: InputViewState.error)
-                self.setInputErrorText(text: self.inputErrorType.rawValue)
+                self.setInputErrorText(text: inputErrorText)
             }
         }
     }
     
+    private var isRemoveBtnHidden: Bool = false
+    
     /// x 버튼 (입력값 전체 삭제) 활성화 여부
-    @IBInspectable var isRemoveBtnActive: Bool = false {
+    private var isRemoveBtnActive: Bool = false {
         didSet {
             guard let anchorToInputView = self.inputTextFieldTrailingToInputView else { return }
             guard let anchorToRemoveBtn = self.inputTextFieldTrailingToRemoveBtn else { return }
@@ -121,7 +136,7 @@ class CustomInputView: UIView {
         // print(#fileID, #function, #line, "")
         self.applyNib()
         self.applyDefaultLayout()
-        self.setAction()
+        self.applyAction()
     }
     
     required init?(coder: NSCoder) {
@@ -133,7 +148,7 @@ class CustomInputView: UIView {
         // print(#fileID, #function, #line, "")
         self.applyNib()
         self.applyDefaultLayout()
-        self.setAction()
+        self.applyAction()
     }
     
     fileprivate func applyNib() {
@@ -157,7 +172,7 @@ class CustomInputView: UIView {
         self.isActive = true
         self.isEditing = false
         self.isValidInput = true
-        self.isRequired = true
+//        self.isRequired = true
         
         self.applyStyle(for: .basic)
         
@@ -166,22 +181,25 @@ class CustomInputView: UIView {
         self.inputTextField.backgroundColor = UIColor.white
     }
     
-    private func setAction() {
+    private func applyAction() {
+        self.inputTextField.addTarget(self, action: #selector(handleTextFieldEditingBegin), for: .editingDidBegin)
         self.inputTextField.addTarget(self, action: #selector(handleTextFieldEditingEnd), for: .editingDidEnd)
         self.inputTextField.addTarget(self, action: #selector(handleTextFieldEditingChanged), for: .editingChanged)
         
         self.removeButton.addTarget(self, action: #selector(handleRemoveAllBtnClicked), for: .touchUpInside)
     }
     
-    
-    func applyCustomLayout(placeholder: String = "입력해주세요.", isRequired: Bool = true) {
+    func applyCustomLayout(placeholder: String = "입력해주세요.", isSecureText: Bool = false, isActive: Bool = true, isRemoveBtnHidden: Bool = false) {
         print(#fileID, #function, #line, "")
         
         self.inputTextField.placeholder = placeholder
-        self.isRequired = isRequired
+        if isSecureText {
+            self.inputTextField.isSecureTextEntry = true
+        }
+        self.isActive = isActive
+        self.isRemoveBtnHidden = isRemoveBtnHidden
         
     }
-    
     
     /// input view 상태에 따라 디자인 스타일을 적용시켜줌
     /// - Parameter for: input view 상태
@@ -206,27 +224,18 @@ extension CustomInputView {
     /// 텍스트필드 입력 종료 이벤트 발생 시 처리
     /// - Parameter sender: 이벤트가 발생한 텍스트필드
     @objc func handleTextFieldEditingEnd(_ sender: UITextField) {
-        print(#fileID, #function, #line, "- edit end: \(sender.text ?? "no input")")
+        // print(#fileID, #function, #line, "- edit end: \(sender.text ?? "no input")")
+        
         guard let input = sender.text else {
             self.isEditing = false
-            self.isValidInput = self.checkInputValidity("")
+            self.isValidInput = false
             return
         }
         
-        if input.isEmpty {
-            self.isEditing = false
-            self.isValidInput = self.checkInputValidity("")
-            return
-        }
+        self.isEditing = false
         
-        if self.isEditing {
-            self.isEditing = false
-        }
-        
-        // 유효한 값인지 확안
-        self.isValidInput = self.checkInputValidity(input)
+        self.delegate?.inputDidEndEditing(in: self, newValue: input)
     }
-    
     
     /// 텍스트필드 입력값 변경 이벤트 발생 시 처리
     /// - Parameter sender: 이벤트가 발생한 텍스트필드
@@ -235,36 +244,20 @@ extension CustomInputView {
         
         guard let input = sender.text else {
             self.isEditing = false
-            self.isValidInput = self.checkInputValidity("")
+            self.isValidInput = false
             return
         }
         
-        if input.isEmpty {
-            self.isEditing = false
-            self.isValidInput = self.checkInputValidity("")
-            return
-        }
+        self.isEditing = input == "" ? false : true
         
-        if !self.isEditing {
-            self.isEditing = true
-        }
-        self.isValidInput = self.checkInputValidity(input)
+        self.delegate?.inputDidChange(in: self, newValue: input)
     }
     
-    
-    /// 입력값이 유효한지 검사
-    /// 유효하지 않다면, 에러 타입을 체크
-    /// - Parameter input: 입력값
-    /// - Returns: 유효한지 여부, 유효하면 true 리턴
-    fileprivate func checkInputValidity(_ input: String) -> Bool {
-        if input == "" && self.isRequired {
-            self.inputErrorType = .emptyValue
-            return false
-        }
-        
-        return true
+    /// 텍스트필드 입력 시작이벤트 발생 시 처리
+    /// - Parameter sender: 이벤트가 발생한 텍스트필드
+    @objc func handleTextFieldEditingBegin(_ sender: UITextField) {
+        self.isEditing = true
     }
-    
     
     /// 입력값 설정
     /// - Parameter newInput: 변경할 입력값
@@ -286,7 +279,7 @@ extension CustomInputView {
         
         self.setInputText("")
         self.isEditing = false
-        self.isValidInput = self.checkInputValidity("")
+        self.isValidInput = self.delegate?.validateInput(of: self, input: "") ?? true
     }
 }
     

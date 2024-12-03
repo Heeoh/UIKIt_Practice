@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OHouseHomePractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="AFe-2u-knJ">
+                                <rect key="frame" x="0.0" y="59" width="393" height="52"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vco-ec-pTY" userLabel="icon button" customClass="IconButton" customModule="OHouseHomePractice" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="8" width="36" height="36"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="5Og-wV-FW5"/>
+                                            <constraint firstAttribute="height" constant="36" id="ri0-xy-iuL"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mqo-Y8-Xrf" userLabel="search bar btn view">
+                                        <rect key="frame" x="56" y="8" width="201" height="36"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IuP-id-DZJ" userLabel="search bar" customClass="SearchBarView" customModule="OHouseHomePractice" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="201" height="36"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3d-SA-B24">
+                                                <rect key="frame" x="0.0" y="0.0" width="201" height="36"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="u3d-SA-B24" firstAttribute="top" secondItem="Mqo-Y8-Xrf" secondAttribute="top" id="0CY-Uv-pGS"/>
+                                            <constraint firstItem="u3d-SA-B24" firstAttribute="leading" secondItem="Mqo-Y8-Xrf" secondAttribute="leading" id="9dh-qu-gg6"/>
+                                            <constraint firstAttribute="bottom" secondItem="u3d-SA-B24" secondAttribute="bottom" id="LHw-Pj-Uy7"/>
+                                            <constraint firstAttribute="trailing" secondItem="IuP-id-DZJ" secondAttribute="trailing" id="ME1-SH-MvK"/>
+                                            <constraint firstItem="IuP-id-DZJ" firstAttribute="top" secondItem="Mqo-Y8-Xrf" secondAttribute="top" id="VwC-hv-T8N"/>
+                                            <constraint firstAttribute="bottom" secondItem="IuP-id-DZJ" secondAttribute="bottom" id="Znz-47-ALn"/>
+                                            <constraint firstItem="IuP-id-DZJ" firstAttribute="leading" secondItem="Mqo-Y8-Xrf" secondAttribute="leading" id="nhr-MY-reH"/>
+                                            <constraint firstAttribute="trailing" secondItem="u3d-SA-B24" secondAttribute="trailing" id="s96-Uz-scO"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKq-Qh-Jfm" userLabel="icon button" customClass="IconButton" customModule="OHouseHomePractice" customModuleProvider="target">
+                                        <rect key="frame" x="261" y="8" width="36" height="36"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="5ue-RT-YHO"/>
+                                            <constraint firstAttribute="width" constant="36" id="fto-0f-yQx"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Mt-UR-bYa" userLabel="icon button" customClass="IconButton" customModule="OHouseHomePractice" customModuleProvider="target">
+                                        <rect key="frame" x="301" y="8" width="36" height="36"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="LMc-2S-D23"/>
+                                            <constraint firstAttribute="height" constant="36" id="qk0-Cq-boV"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWF-7Y-13w" userLabel="icon button" customClass="IconButton" customModule="OHouseHomePractice" customModuleProvider="target">
+                                        <rect key="frame" x="341" y="8" width="36" height="36"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="0QA-Oh-efp"/>
+                                            <constraint firstAttribute="height" constant="36" id="COt-VH-yzG"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="16" bottom="8" trailing="16"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AFe-2u-knJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P6a-Ni-Eyl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AFe-2u-knJ" secondAttribute="trailing" id="QTu-Y2-sgU"/>
+                            <constraint firstItem="AFe-2u-knJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Sd6-Fj-Ypu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alarmBtn" destination="dKq-Qh-Jfm" id="F0L-Jb-kIl"/>
+                        <outlet property="bookmarkBtn" destination="7Mt-UR-bYa" id="OI7-Fh-m8a"/>
+                        <outlet property="cartBtn" destination="eWF-7Y-13w" id="lJa-7u-6WJ"/>
+                        <outlet property="categoryBtn" destination="Vco-ec-pTY" id="59b-xg-RyL"/>
+                        <outlet property="searchBar" destination="IuP-id-DZJ" id="wBe-R7-E3O"/>
+                        <outlet property="searchBarBtn" destination="u3d-SA-B24" id="J98-m8-T66"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

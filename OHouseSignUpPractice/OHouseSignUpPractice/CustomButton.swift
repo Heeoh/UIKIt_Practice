@@ -71,6 +71,8 @@ class CustomButton: UIView {
         }
     }
     
+    var btnTapAction: () -> Void = {}
+    
     
     // MARK: init
     
@@ -78,6 +80,7 @@ class CustomButton: UIView {
         super.init(frame: frame)
         self.applyNib()
         self.applyDefaultLayout()
+        self.applyAction()
     }
     
     required init?(coder: NSCoder) {
@@ -88,6 +91,7 @@ class CustomButton: UIView {
         super.awakeFromNib()
         self.applyNib()
         self.applyDefaultLayout()
+        self.applyAction()
     }
     
     fileprivate func applyNib() {
@@ -117,6 +121,11 @@ class CustomButton: UIView {
         self.opacityView.backgroundColor = UIColor(white: 1, alpha: 0.5)
     }
     
+    /// 뷰에 애션 및 타겟으 추가
+    private func applyAction() {
+        self.button.addTarget(self, action: #selector(handleButtonTap), for: .touchUpInside)
+    }
+    
     /// 사용자가 커스텀한 버튼 스타일에 맞게 디자인 적용
     /// - Parameters:
     ///   - titleLabel: 버튼 타이틀 라벨 (버튼 텍스트)
@@ -133,6 +142,8 @@ class CustomButton: UIView {
         
         self.applyStyle(for: style)
     }
+    
+    
     
     /// 버튼 스타일에 따라 디자인 적용
     /// - Parameter style: 적용할 버튼 스타일
@@ -166,5 +177,16 @@ class CustomButton: UIView {
                 opacityView.backgroundColor = .clear
             }
         }
+    }
+    
+    func setActiveState(state: Bool) {
+        self.isActive = state
+    }
+}
+
+extension CustomButton {
+    @objc
+    fileprivate func handleButtonTap(_ sender: UIButton) {
+        self.btnTapAction()
     }
 }
