@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="netflixPractice" customModuleProvider="target">
+            <connections>
+                <outlet property="downloadBtn" destination="040-sN-uUC" id="dBx-vU-LTb"/>
+                <outlet property="mainContentCardBtn" destination="eeT-gW-ioY" id="Wtg-OI-Clb"/>
+                <outlet property="nicknameLabel" destination="CGJ-36-N8d" id="B9c-PZ-fqz"/>
+                <outlet property="screenShareBtn" destination="5bu-6G-ESg" id="wJB-Hw-d3l"/>
+                <outlet property="searchBtn" destination="czN-sX-yoF" id="3HM-J6-AUI"/>
+                <outlet property="view" destination="Dz1-2u-Rrw" id="THs-dq-9eu"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Dz1-2u-Rrw">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="NSr-9A-RU5" userLabel="home header view">
+                    <rect key="frame" x="0.0" y="59" width="393" height="52"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGJ-36-N8d">
+                            <rect key="frame" x="16" y="15.999999999999998" width="79.333333333333329" height="20.333333333333329"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qti-Ih-KG6" userLabel="empty view">
+                            <rect key="frame" x="99.333333333333329" y="8" width="163.66666666666669" height="36"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="bVj-OP-OIQ"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bu-6G-ESg" userLabel="icon button view" customClass="IconButtonView" customModule="netflixPractice" customModuleProvider="target">
+                            <rect key="frame" x="267" y="8" width="36" height="36"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="36" id="Tua-y8-uum"/>
+                                <constraint firstAttribute="height" constant="36" id="ncg-Wj-Ocq"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="040-sN-uUC" userLabel="icon button view" customClass="IconButtonView" customModule="netflixPractice" customModuleProvider="target">
+                            <rect key="frame" x="307" y="8" width="36" height="36"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="36" id="BgD-6c-AGH"/>
+                                <constraint firstAttribute="height" constant="36" id="m7T-FE-b94"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czN-sX-yoF" userLabel="icon button view" customClass="IconButtonView" customModule="netflixPractice" customModuleProvider="target">
+                            <rect key="frame" x="347" y="8" width="36" height="36"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="hpy-tJ-PIK"/>
+                                <constraint firstAttribute="width" constant="36" id="td8-fO-XiT"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="16" bottom="8" trailing="10"/>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcM-a5-I6i" userLabel="main content card view" customClass="mainContentCardView" customModule="netflixPractice" customModuleProvider="target">
+                    <rect key="frame" x="25" y="152.99999999999997" width="343" height="457.33333333333326"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeT-gW-ioY">
+                            <rect key="frame" x="0.0" y="0.0" width="343" height="457.33333333333331"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="eeT-gW-ioY" secondAttribute="bottom" id="2xn-47-0NI"/>
+                        <constraint firstAttribute="trailing" secondItem="eeT-gW-ioY" secondAttribute="trailing" id="4fY-O3-qCj"/>
+                        <constraint firstItem="eeT-gW-ioY" firstAttribute="leading" secondItem="rcM-a5-I6i" secondAttribute="leading" id="n28-iR-OOG"/>
+                        <constraint firstAttribute="width" secondItem="rcM-a5-I6i" secondAttribute="height" multiplier="3:4" id="nd5-yz-neG"/>
+                        <constraint firstItem="eeT-gW-ioY" firstAttribute="top" secondItem="rcM-a5-I6i" secondAttribute="top" id="wwE-i0-QSl"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="9K2-c7-ULN"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="NSr-9A-RU5" firstAttribute="leading" secondItem="9K2-c7-ULN" secondAttribute="leading" id="0Qw-hy-k4U"/>
+                <constraint firstItem="rcM-a5-I6i" firstAttribute="top" secondItem="NSr-9A-RU5" secondAttribute="bottom" constant="42" id="2mS-GT-eMB"/>
+                <constraint firstItem="rcM-a5-I6i" firstAttribute="leading" secondItem="9K2-c7-ULN" secondAttribute="leading" constant="25" id="KIw-ay-mm9"/>
+                <constraint firstItem="NSr-9A-RU5" firstAttribute="top" secondItem="9K2-c7-ULN" secondAttribute="top" id="VaZ-mD-XFF"/>
+                <constraint firstItem="9K2-c7-ULN" firstAttribute="trailing" secondItem="NSr-9A-RU5" secondAttribute="trailing" id="gW0-zE-VQX"/>
+                <constraint firstItem="rcM-a5-I6i" firstAttribute="centerX" secondItem="9K2-c7-ULN" secondAttribute="centerX" id="xF3-mi-chT"/>
+            </constraints>
+            <point key="canvasLocation" x="96.946564885496173" y="-11.267605633802818"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

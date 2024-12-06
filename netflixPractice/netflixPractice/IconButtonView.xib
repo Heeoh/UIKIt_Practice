@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IconButtonView" customModule="netflixPractice" customModuleProvider="target">
+            <connections>
+                <outlet property="button" destination="4JJ-nd-0AK" id="T2m-vf-Nec"/>
+                <outlet property="iconImg" destination="ezv-4e-kez" id="b6H-Ue-C1W"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="questionmark.app" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ezv-4e-kez">
+                    <rect key="frame" x="6" y="7.6666666666666625" width="24" height="21"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="HPQ-JQ-DL7"/>
+                        <constraint firstAttribute="width" constant="24" id="jnO-Bg-CcH"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JJ-nd-0AK">
+                    <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title=""/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <accessibility key="accessibilityConfiguration">
+                <accessibilityTraits key="traits" button="YES" image="YES"/>
+            </accessibility>
+            <constraints>
+                <constraint firstItem="ezv-4e-kez" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="6" id="AXz-PW-U8i"/>
+                <constraint firstAttribute="bottom" secondItem="ezv-4e-kez" secondAttribute="bottom" constant="6" id="FnP-hH-7tZ"/>
+                <constraint firstItem="ezv-4e-kez" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="MQi-2w-tj9"/>
+                <constraint firstItem="4JJ-nd-0AK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="PQb-rV-USM"/>
+                <constraint firstAttribute="bottom" secondItem="4JJ-nd-0AK" secondAttribute="bottom" id="VrB-7w-MAK"/>
+                <constraint firstItem="4JJ-nd-0AK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eRO-mf-ODD"/>
+                <constraint firstAttribute="trailing" secondItem="ezv-4e-kez" secondAttribute="trailing" constant="6" id="o88-OH-wEu"/>
+                <constraint firstAttribute="trailing" secondItem="4JJ-nd-0AK" secondAttribute="trailing" id="tvz-1C-aLB"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-294.6564885496183" y="-298.59154929577466"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="questionmark.app" catalog="system" width="128" height="114"/>
+    </resources>
+</document>

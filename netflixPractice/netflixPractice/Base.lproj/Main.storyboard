@@ -1,24 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="netflixPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="넷플릭스를 시청할 프로필을 선택하세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEm-Vu-Ues">
+                                <rect key="frame" x="62" y="70" width="268" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sr8-tF-Hfb" userLabel="profileTileView">
+                                <rect key="frame" x="146.66666666666666" y="369.66666666666669" width="100" height="138"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Uwk-Ar-rLD" userLabel="profileTileStack">
+                                        <rect key="frame" x="2" y="0.0" width="100" height="138"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4R-2F-ryd">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="tDZ-r9-0ka"/>
+                                                    <constraint firstAttribute="height" constant="100" id="yFn-08-1Rf"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00Q-57-GJV">
+                                                <rect key="frame" x="13.333333333333343" y="108" width="73.333333333333329" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="8Xk-Sq-f9X"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aka-Ci-qrh">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="138"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Uwk-Ar-rLD" firstAttribute="top" secondItem="sr8-tF-Hfb" secondAttribute="top" id="4KY-oc-O4c"/>
+                                    <constraint firstAttribute="bottom" secondItem="Uwk-Ar-rLD" secondAttribute="bottom" id="Fvh-9J-vHF"/>
+                                    <constraint firstItem="aka-Ci-qrh" firstAttribute="leading" secondItem="sr8-tF-Hfb" secondAttribute="leading" id="IUE-AE-r8w"/>
+                                    <constraint firstItem="aka-Ci-qrh" firstAttribute="top" secondItem="sr8-tF-Hfb" secondAttribute="top" id="W9l-oe-LCa"/>
+                                    <constraint firstAttribute="bottom" secondItem="aka-Ci-qrh" secondAttribute="bottom" id="YtO-EI-xp4"/>
+                                    <constraint firstAttribute="trailing" secondItem="Uwk-Ar-rLD" secondAttribute="trailing" id="eRX-E8-p7i"/>
+                                    <constraint firstAttribute="trailing" secondItem="aka-Ci-qrh" secondAttribute="trailing" id="n98-Qz-jB7"/>
+                                    <constraint firstItem="Uwk-Ar-rLD" firstAttribute="leading" secondItem="sr8-tF-Hfb" secondAttribute="leading" id="vIl-bM-rRt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sr8-tF-Hfb" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="I1f-cE-vys"/>
+                            <constraint firstItem="sr8-tF-Hfb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="iSw-Rq-JqU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nicknameLabel" destination="00Q-57-GJV" id="0oz-Ar-fct"/>
+                        <outlet property="profileBtn" destination="aka-Ci-qrh" id="UuJ-2s-5J1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="98" y="-27"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
